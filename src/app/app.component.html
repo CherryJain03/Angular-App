@@ -1,0 +1,39 @@
+
+<head>
+    <title> Tic Tac Toe</title>
+</head>
+
+
+<div class="field">
+    <label>Choose Players</label>
+    <div class="players_number" id="players">
+      <ul>
+       <li> <button (click)="player_no = 1">1 Player vs Computer</button> </li>
+       <li> <button (click)="player_no = 2">2 Player</button></li>
+       <li> <button (click)="player_no = 3">3 Player</button></li>
+       <button (click)="onclick()" class="btn btn-primary">click click</button>
+        
+        </ul>
+    </div>
+  </div>
+
+    
+  <div [ngSwitch]="player_no">
+    <div *ngSwitchCase = 1>
+        <app-test> </app-test>
+<app-square [value] = " 'X' "></app-square>
+</div>
+    
+      <div *ngSwitchCase = 2>
+<app-board> </app-board>
+<app-square [value] = " 'X' "></app-square>
+</div>
+<div *ngSwitchCase = 3> Not Available Now</div>
+
+
+</div>
+
+<script src="custom.js"></script>
+
+
+<router-outlet></router-outlet>
